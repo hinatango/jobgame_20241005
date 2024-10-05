@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリッカーゲーム - 職業を学ぼう</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="status-bar">
+        <p id="status">職業: 新米無職 | レベル: 1 | 所持金: 0円 | 経験値: 0</p>
+    </div>
+    <div class="click-area" onclick="handleClick()">
+        <p>クリックして経験値を稼ごう！</p>
+    </div>
+    <div class="log" id="log"></div>
+    <div class="menu">
+        <button onclick="openShop()">アイテムショップ</button>
+        <button onclick="openJobCenter()">ハローワーク</button>
+        <button onclick="openEncyclopedia()">図鑑</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
