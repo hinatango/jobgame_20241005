@@ -4,23 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>クリッカーゲーム - 職業を学ぼう</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <script defer src="job.js"></script>
+    <script defer src="place.js"></script>
+    <script defer src="uranai.js"></script>
+    <script defer src="quest.js"></script>
+    <script defer src="item.js"></script>
+    <script defer src="log.js"></script>
+    <title>クリッカーゲーム</title>
 </head>
 <body>
-    <div class="status-bar">
-        <p id="status">職業: 新米無職 | レベル: 1 | 所持金: 0円 | 経験値: 0</p>
-    </div>
-    <div class="click-area" onclick="handleClick()">
-        <p>クリックして経験値を稼ごう！</p>
-    </div>
-    <div class="log" id="log"></div>
-    <div class="menu">
-        <button onclick="openShop()">アイテムショップ</button>
-        <button onclick="openJobCenter()">ハローワーク</button>
-        <button onclick="openEncyclopedia()">図鑑</button>
-    </div>
+    <header>
+        <div id="player-status">
+            <img id="player-icon" src="images/jobs/nojob.png" alt="Player Icon">
+            <div id="player-info">
+                <p>職業: 新米無職 (レベル <span id="level">0</span>)</p>
+                <p>経験値: <span id="experience">0</span>/1000</p>
+                <p>所持金: <span id="money">0</span>円</p>
+                <p>体力: <span id="stamina">100</span></p>
+            </div>
+        </div>
+    </header>
 
-    <script src="script.js"></script>
+    <main>
+        <div id="actions">
+            <button id="learn-button">学習</button>
+            <button id="work-button">仕事</button>
+            <button id="fortune-button">占い</button>
+        </div>
+        <div id="menu">
+            <button id="quest-board">クエストボード</button>
+            <button id="item-shop">アイテムショップ</button>
+            <button id="job-center">ハローワーク（転職所）</button>
+            <button id="encyclopedia">図鑑</button>
+        </div>
+    </main>
+
+    <footer>
+        <div id="log"></div>
+    </footer>
 </body>
 </html>
