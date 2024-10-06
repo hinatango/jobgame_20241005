@@ -3,23 +3,24 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="style.css">
     <script defer src="main.js"></script>
     <script defer src="job.js"></script>
+    <script defer src="action.js"></script>
     <script defer src="place.js"></script>
     <script defer src="uranai.js"></script>
     <script defer src="quest.js"></script>
     <script defer src="item.js"></script>
     <script defer src="log.js"></script>
-    <title>クリッカーゲーム</title>
+    <title>キャリア教育クリッカーゲーム</title>
 </head>
 <body>
     <header>
         <div id="player-status">
-            <img id="player-icon" src="images/jobs/nojob.png" alt="Player Icon">
+            <img id="player-icon" src="images/jobs/nojob.png" alt="Player Icon" onclick="activateDebugMode()">
             <div id="player-info">
-                <p>職業: 新米無職 (レベル <span id="level">0</span>)</p>
+                <p>職業: <span id="role">新米</span> <span id="job">無職</span> (レベル <span id="level">0</span>)</p>
                 <p>経験値: <span id="experience">0</span>/1000</p>
                 <p>所持金: <span id="money">0</span>円</p>
                 <p>体力: <span id="stamina">100</span></p>

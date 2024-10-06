@@ -1,5 +1,4 @@
 
-// Event Listeners for Buttons
 document.getElementById('learn-button').addEventListener('click', function() {
     learn();
 });
@@ -28,50 +27,11 @@ document.getElementById('encyclopedia').addEventListener('click', function() {
     alert('現在準備中です');
 });
 
-// Function Definitions for Button Actions
-function learn() {
-    let experience = parseInt(document.getElementById('experience').innerText);
-    let level = parseInt(document.getElementById('level').innerText);
-    let stamina = parseInt(document.getElementById('stamina').innerText);
-
-    if (stamina > 0) {
-        experience += 1;
-        stamina -= 1;
-
-        if (experience >= 10) {
-            level += 1;
-            experience = 0; // Reset experience after leveling up
-        }
-
-        // Update DOM elements
-        document.getElementById('experience').innerText = experience;
-        document.getElementById('level').innerText = level;
-        document.getElementById('stamina').innerText = stamina;
-
-        log(`学習を行いました。経験値: ${experience}, レベル: ${level}`);
-    } else {
-        log('体力が不足しています。体力を回復してください。');
-    }
+// Debug mode to set experience, money, and stamina to max values
+function activateDebugMode() {
+    document.getElementById('experience').innerText = 1000;
+    document.getElementById('money').innerText = 1000;
+    document.getElementById('stamina').innerText = 100;
+    log('デバッグモードを有効にしました。全ステータスが最大値になりました。');
 }
-
-function work() {
-    let money = parseInt(document.getElementById('money').innerText);
-    let stamina = parseInt(document.getElementById('stamina').innerText);
-
-    if (stamina > 0) {
-        money += 1;
-        stamina -= 1;
-
-        // Update DOM elements
-        document.getElementById('money').innerText = money;
-        document.getElementById('stamina').innerText = stamina;
-
-        log(`仕事を行いました。所持金: ${money}`);
-    } else {
-        log('体力が不足しています。体力を回復してください。');
-    }
-}
-
-function log(message) {
-    document.getElementById('log').innerText = message;
-}
+    

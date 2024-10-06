@@ -4,6 +4,7 @@ body {
     background-color: #f0f8ff;
     color: #333;
     text-align: center;
+    overflow-x: hidden;
 }
 
 header {
@@ -20,15 +21,27 @@ header {
 }
 
 #player-icon {
-    width: 50px;
-    height: 50px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
 }
 
 main {
     margin-top: 20px;
 }
 
-#actions button, #menu button {
+#actions button {
+    margin: 10px;
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: #87cefa;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#menu button {
     margin: 10px;
     padding: 15px;
     font-size: 1rem;
