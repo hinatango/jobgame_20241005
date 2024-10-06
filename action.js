@@ -1,48 +1,43 @@
 
-// Placeholder for action-related functions
 function learn() {
     let experience = parseInt(document.getElementById('experience').innerText);
     let level = parseInt(document.getElementById('level').innerText);
     let stamina = parseInt(document.getElementById('stamina').innerText);
-    let role = document.getElementById('role').innerText;
 
-    if (stamina > 0) {
-        if (experience < 1000) {
-            experience += 1;
-            stamina -= 1;
+    if (stamina > 0 && experience < 1000) {
+        experience += 1;
+        stamina -= 1;
 
-            if (experience % 10 === 0) {
-                level += 1;
+        document.getElementById('experience').innerText = experience;
+        document.getElementById('stamina').innerText = stamina;
 
-                if (level === 100) {
-                    if (role === "新米") {
-                        role = "中堅";
-                        level = 0;
-                        log("職業が新米から中堅にグレードアップしました！");
-                    } else if (role === "中堅") {
-                        role = "ベテラン";
-                        level = 0;
-                        log("職業が中堅からベテランにグレードアップしました！");
-                    }
+        // Display the increase in red text temporarily
+        let expIncrease = document.getElementById('exp-increase');
+        expIncrease.innerText = '+1';
+        setTimeout(() => expIncrease.innerText = '', 1000);
+
+        // Level up every 10 experience points
+        if (experience % 10 === 0) {
+            level += 1;
+            document.getElementById('level').innerText = level;
+
+            if (level === 100) {
+                let role = document.getElementById('role');
+                if (role.innerText === '新米') {
+                    role.innerText = '中堅';
+                } else if (role.innerText === '中堅') {
+                    role.innerText = 'ベテラン';
                 }
-
+                document.getElementById('level').innerText = 0;
+                log(`職業が${role.innerText}にグレードアップしました！`);
+            } else {
                 log(`職業レベルが${level}に上がりました！`);
             }
-
-            // Update DOM elements
-            document.getElementById('experience').innerText = experience;
-            document.getElementById('level').innerText = level;
-            document.getElementById('role').innerText = role;
-            document.getElementById('stamina').innerText = stamina;
-
-            if (stamina <= 10) {
-                log('体力が少なくなっています。体力を回復してください。');
-            }
-        } else {
-            log('経験値が最大値に達しました。これ以上増加しません。');
         }
+    } else if (experience >= 1000) {
+        log('経験値が最大値に達しています。');
     } else {
-        log('体力が不足しています。体力を回復してください。');
+        log('体力が足りません。');
     }
 }
 
@@ -50,21 +45,21 @@ function work() {
     let money = parseInt(document.getElementById('money').innerText);
     let stamina = parseInt(document.getElementById('stamina').innerText);
 
-    if (stamina > 0) {
-        if (money < 1000) {
-            money += 1;
-            stamina -= 1;
+    if (stamina > 0 && money < 1000) {
+        money += 1;
+        stamina -= 1;
 
-            // Update DOM elements
-            document.getElementById('money').innerText = money;
-            document.getElementById('stamina').innerText = stamina;
+        document.getElementById('money').innerText = money;
+        document.getElementById('stamina').innerText = stamina;
 
-            log(`仕事を行いました。所持金: ${money}`);
-        } else {
-            log('所持金が最大値に達しました。これ以上増加しません。');
-        }
+        // Display the increase in red text temporarily
+        let moneyIncrease = document.getElementById('money-increase');
+        moneyIncrease.innerText = '+1';
+        setTimeout(() => moneyIncrease.innerText = '', 1000);
+    } else if (money >= 1000) {
+        log('所持金が最大値に達しています。');
     } else {
-        log('体力が不足しています。体力を回復してください。');
+        log('体力が足りません。');
     }
 }
     

@@ -4,20 +4,25 @@ body {
     background-color: #f0f8ff;
     color: #333;
     text-align: center;
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #ffffff;
-    padding: 10px;
-    border-bottom: 2px solid #b0c4de;
+    background-color: #b0e0e6;
+    padding: 1em;
 }
 
-#player-status {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 2em;
+}
+
+#status {
+    margin-bottom: 2em;
 }
 
 #player-icon {
@@ -26,39 +31,44 @@ header {
     cursor: pointer;
 }
 
-main {
-    margin-top: 20px;
+#actions, #menu {
+    margin-bottom: 1em;
 }
 
-#actions button {
-    margin: 10px;
-    padding: 20px;
-    font-size: 1.2rem;
+button {
     background-color: #87cefa;
     border: none;
-    border-radius: 8px;
+    padding: 1em 2em;
+    margin: 0.5em;
     cursor: pointer;
+    font-size: 1em;
     transition: background-color 0.3s;
 }
 
-#menu button {
-    margin: 10px;
-    padding: 15px;
-    font-size: 1rem;
-    background-color: #87cefa;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#actions button:hover, #menu button:hover {
+button:hover {
     background-color: #4682b4;
 }
 
-footer {
-    margin-top: 30px;
-    padding: 10px;
-    background-color: #ffffff;
-    border-top: 2px solid #b0c4de;
+button:active {
+    background-color: #5f9ea0;
+}
+
+#fortune-button {
+    font-size: 1.2em;
+}
+
+.increase {
+    color: red;
+    font-weight: bold;
+    font-size: 0.8em;
+    transition: opacity 1s ease-out;
+}
+
+#log {
+    background-color: #e0ffff;
+    padding: 1em;
+    margin-top: 2em;
+    height: 100px;
+    overflow-y: auto;
+    font-size: 0.9em;
 }

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>クリッカーゲーム</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="main.js"></script>
     <script defer src="job.js"></script>
@@ -13,37 +14,34 @@
     <script defer src="quest.js"></script>
     <script defer src="item.js"></script>
     <script defer src="log.js"></script>
-    <title>キャリア教育クリッカーゲーム</title>
 </head>
 <body>
     <header>
-        <div id="player-status">
-            <img id="player-icon" src="images/jobs/nojob.png" alt="Player Icon" onclick="activateDebugMode()">
-            <div id="player-info">
-                <p>職業: <span id="role">新米</span> <span id="job">無職</span> (レベル <span id="level">0</span>)</p>
-                <p>経験値: <span id="experience">0</span>/1000</p>
-                <p>所持金: <span id="money">0</span>円</p>
-                <p>体力: <span id="stamina">100</span></p>
-            </div>
-        </div>
+        <h1>ジョブクリッカー</h1>
     </header>
-
     <main>
-        <div id="actions">
+        <section id="status">
+            <img src="images/jobs/nojob.png" alt="プレイヤーアイコン" id="player-icon" onclick="activateDebugMode()">
+            <p>職業: <span id="role">新米</span> <span id="job">無職</span></p>
+            <p>レベル: <span id="level">0</span></p>
+            <p>経験値: <span id="experience">0</span> <span id="exp-increase" class="increase"></span></p>
+            <p>所持金: <span id="money">0</span> <span id="money-increase" class="increase"></span></p>
+            <p>体力: <span id="stamina">100</span></p>
+        </section>
+        <section id="actions">
             <button id="learn-button">学習</button>
             <button id="work-button">仕事</button>
             <button id="fortune-button">占い</button>
-        </div>
-        <div id="menu">
+        </section>
+        <section id="menu">
             <button id="quest-board">クエストボード</button>
             <button id="item-shop">アイテムショップ</button>
             <button id="job-center">ハローワーク（転職所）</button>
             <button id="encyclopedia">図鑑</button>
-        </div>
+        </section>
+        <section id="log">
+            <p id="log-text">ログを表示します...</p>
+        </section>
     </main>
-
-    <footer>
-        <div id="log"></div>
-    </footer>
 </body>
 </html>
